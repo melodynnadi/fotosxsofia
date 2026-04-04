@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fotosxsofia — Your Photographer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-links-left">
+            <a href="#about">About Me</a>
+            <a href="#portfolio">Portfolio</a>
+        </div>
+        <a href="#" class="nav-logo"><span class="logo-s">S</span><span class="logo-r">R</span></a>
+        <div class="nav-links-right">
+            <a href="#prices">Prices</a>
+            <a href="#contact">Contacts</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-menu">
+            <a href="#about">About Me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#prices">Prices</a>
+            <a href="#contact">Contacts</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Sofia Reyes</h1>
+            <p class="hero-subtitle">Your Photographer</p>
+            <a href="#contact" class="btn btn-outline">Contact</a>
+        </div>
+        <div class="hero-socials">
+            <a href="#" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <circle cx="12" cy="12" r="5"/>
+                    <circle cx="17.5" cy="6.5" r="1.5"/>
+                </svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Experience</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">40+</span>
+                <span class="stat-label">Photoshoots</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-images">
+            <div class="about-img-back">
+                <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&h=500&fit=crop" alt="Sofia with camera">
+            </div>
+            <div class="about-img-front">
+                <img src="sofieabout.jpg" alt="Sofia portrait">
+            </div>
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am a photographer who is passionate about capturing life's most beautiful moments. I work with individuals, couples, and families to create timeless images that tell your unique story.</p>
+            <p>I am also a college student trying who loves soccer very much as well as photgraphy. To book my services, simply reach out, and we'll discuss the details together.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <h2>Portfolio</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <img src="soccer.jpg" alt="Wedding photography">
+                <div class="portfolio-overlay">
+                    <span>Soccer</span>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="graduation.jpg" alt="Family photography">
+                <div class="portfolio-overlay">
+                    <span>Graduation</span>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="lovestory.jpg" alt="Love Story photography">
+                <div class="portfolio-overlay">
+                    <span>Love Story</span>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <img src="family.jpg" alt="Family photography">
+                <div class="portfolio-overlay">
+                    <span>Family</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prices Section -->
+    <section class="prices" id="prices">
+        <div class="section-header">
+            <h2>Prices</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="prices-grid">
+            <div class="price-card">
+                <div class="price-card-image">
+                    <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f67b?w=400&h=300&fit=crop" alt="Minimal package">
+                    <div class="price-card-overlay">
+                        <h3>Package "Minimal"</h3>
+                        <span class="price-amount">$100</span>
+                    </div>
+                </div>
+                <div class="price-details">
+                    <div class="price-detail-row">
+                        <span>Duration</span>
+                        <span>1 Hour</span>
+                    </div>
+                    <div class="price-detail-row">
+                        <span>Number of Photos</span>
+                        <span>20-40</span>
+                    </div>
+                    <div class="price-detail-row">
+                        <span>Consultation on Style</span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="price-card">
+                <div class="price-card-image">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=300&fit=crop" alt="Standard package">
+                    <div class="price-card-overlay">
+                        <h3>Package "Standard"</h3>
+                        <span class="price-amount">$200</span>
+                    </div>
+                </div>
+                <div class="price-details">
+                    <div class="price-detail-row">
+                        <span>Duration</span>
+                        <span>2 Hours</span>
+                    </div>
+                    <div class="price-detail-row">
+                        <span>Number of Photos</span>
+                        <span>50-70</span>
+                    </div>
+                    <div class="price-detail-row">
+                        <span>Consultation on Style</span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="price-card featured">
+                <div class="price-card-image">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop" alt="Maximum package">
+                    <div class="price-card-overlay">
+                        <h3>Package "Maximum"</h3>
+                        <span class="price-amount">$250</span>
+                    </div>
+                </div>
+                <div class="price-details">
+                    <div class="price-detail-row">
+                        <span>Duration</span>
+                        <span>2 Hours</span>
+                    </div>
+                    <div class="price-detail-row">
+                        <span>Number of Photos</span>
+                        <span>All</span>
+                    </div>
+                    <div class="price-detail-row">
+                        <span>Consultation on Style</span>
+                        <span></span>
+                    </div>
+                    <a href="#contact" class="btn btn-small">Book</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="testimonial-card">
+            <div class="testimonial-avatar">
+                <img src="LinkedinProfile.jpeg" alt="Client">
+            </div>
+            <h4>Melody Nnadi</h4>
+            <p>"The time that I worked with Sofia was amazing. I learned so much from her, and gained a lot of confidence during our shoot. I hope to work with Sofia again!"</p>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo"><span class="logo-s">S</span><span class="logo-r">R</span></span>
+                <p>fotosxsofia@gmail.com</p>
+                <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="footer-nav">
+                <a href="#about">About Me</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#prices">Prices</a>
+                <a href="#contact">Contacts</a>
+            </div>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                        <circle cx="12" cy="12" r="5"/>
+                        <circle cx="17.5" cy="6.5" r="1.5"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-subscribe">
+                <h4>Stay in Touch</h4>
+                <form class="subscribe-form" onsubmit="return false;">
+                    <input type="email" placeholder="E-mail" required>
+                    <button type="submit" class="btn btn-small">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 fotosxsofia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
