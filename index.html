@@ -43,22 +43,23 @@
             <a href="#contact" class="btn btn-outline">Contact</a>
         </div>
         <div class="hero-socials">
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/fotosxs0fia/" target="_blank" aria-label="Instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <rect x="2" y="2" width="20" height="20" rx="5"/>
                     <circle cx="12" cy="12" r="5"/>
                     <circle cx="17.5" cy="6.5" r="1.5"/>
                 </svg>
             </a>
-            <a href="#" aria-label="TikTok">
+            <a href="mailto:reyeseve006@gmail.com" aria-label="Email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 4L12 13 2 4"/>
                 </svg>
             </a>
         </div>
         <div class="hero-stats">
             <div class="stat">
-                <span class="stat-number">5+</span>
+                <span class="stat-number">3+</span>
                 <span class="stat-label">Experience</span>
             </div>
             <div class="stat">
@@ -83,9 +84,9 @@
             </div>
         </div>
         <div class="about-text">
-            <h2>About Me</h2>
-            <p>I am a photographer who is passionate about capturing life's most beautiful moments. I work with individuals, couples, and families to create timeless images that tell your unique story.</p>
-            <p>I am also a college student trying who loves soccer very much as well as photgraphy. To book my services, simply reach out, and we'll discuss the details together.</p>
+            <h2>Hi, I'm Sofia</h2>
+            <p>I'm a photographer with over 2 years of experience, passionate about capturing real moments and meaningful milestones. I specialize in graduation and sports photography, creating images that truly feel like you.</p>
+            <p>My goal is to make every session comfortable, fun, and leave you with photos you'll be proud to share.</p>
         </div>
     </section>
 
@@ -96,30 +97,30 @@
             <div class="section-line"></div>
         </div>
         <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <img src="soccer.jpg" alt="Wedding photography">
+            <a href="sports.html" class="portfolio-card">
+                <img src="soccer.jpg" alt="Sports photography">
                 <div class="portfolio-overlay">
-                    <span>Soccer</span>
+                    <span>Sports</span>
                 </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="graduation.jpg" alt="Family photography">
+            </a>
+            <a href="graduation.html" class="portfolio-card">
+                <img src="graduation.jpg" alt="Graduation photography">
                 <div class="portfolio-overlay">
                     <span>Graduation</span>
                 </div>
-            </div>
-            <div class="portfolio-card">
+            </a>
+            <a href="lovestory.html" class="portfolio-card">
                 <img src="lovestory.jpg" alt="Love Story photography">
                 <div class="portfolio-overlay">
                     <span>Love Story</span>
                 </div>
-            </div>
-            <div class="portfolio-card">
+            </a>
+            <a href="family.html" class="portfolio-card">
                 <img src="family.jpg" alt="Family photography">
                 <div class="portfolio-overlay">
                     <span>Family</span>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -129,77 +130,252 @@
             <h2>Prices</h2>
             <div class="section-line"></div>
         </div>
-        <div class="prices-grid">
-            <div class="price-card">
-                <div class="price-card-image">
-                    <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f67b?w=400&h=300&fit=crop" alt="Minimal package">
-                    <div class="price-card-overlay">
-                        <h3>Package "Minimal"</h3>
-                        <span class="price-amount">$100</span>
+
+        <div class="prices-tabs">
+            <button class="prices-tab active" data-tab="graduation">Graduation</button>
+            <button class="prices-tab" data-tab="sports">Sports</button>
+            <button class="prices-tab" data-tab="small">Small Sessions</button>
+        </div>
+
+        <!-- Graduation Packages -->
+        <div class="prices-panel active" id="panel-graduation">
+            <div class="prices-grid">
+                <div class="price-card">
+                    <div class="price-card-image">
+                        <img src="graduation.jpg" alt="Graduation Basic">
+                        <div class="price-card-overlay">
+                            <h3>Basic</h3>
+                            <span class="price-amount">$50</span>
+                        </div>
+                    </div>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Duration</span>
+                            <span>25 min</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Outfits</span>
+                            <span>1</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Locations</span>
+                            <span>1</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>10</span>
+                        </div>
                     </div>
                 </div>
-                <div class="price-details">
-                    <div class="price-detail-row">
-                        <span>Duration</span>
-                        <span>1 Hour</span>
+                <div class="price-card">
+                    <div class="price-card-image">
+                        <img src="graduation.jpg" alt="Graduation Silver">
+                        <div class="price-card-overlay">
+                            <h3>Silver</h3>
+                            <span class="price-amount">$100</span>
+                        </div>
                     </div>
-                    <div class="price-detail-row">
-                        <span>Number of Photos</span>
-                        <span>20-40</span>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Duration</span>
+                            <span>45 min</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Outfits</span>
+                            <span>2</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Locations</span>
+                            <span>1–2</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>20</span>
+                        </div>
                     </div>
-                    <div class="price-detail-row">
-                        <span>Consultation on Style</span>
-                        <span></span>
+                </div>
+                <div class="price-card featured">
+                    <div class="price-card-image">
+                        <img src="graduation.jpg" alt="Graduation Gold">
+                        <div class="price-card-overlay">
+                            <h3>Gold</h3>
+                            <span class="price-amount">$150</span>
+                        </div>
+                    </div>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Duration</span>
+                            <span>60–75 min</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Outfits</span>
+                            <span>2–3</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Locations</span>
+                            <span>2–3</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>30</span>
+                        </div>
+                        <a href="#booking" class="btn btn-small">Book</a>
                     </div>
                 </div>
             </div>
-            <div class="price-card">
-                <div class="price-card-image">
-                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=300&fit=crop" alt="Standard package">
-                    <div class="price-card-overlay">
-                        <h3>Package "Standard"</h3>
-                        <span class="price-amount">$200</span>
+            <div class="prices-addons">
+                <h4>Add-ons</h4>
+                <div class="addons-grid">
+                    <span>Extra Location: +$10</span>
+                    <span>Extra Outfit: +$10</span>
+                    <span>Extra Edited Photo: +$2</span>
+                    <span>5 Extra Photos: +$10</span>
+                    <span>10 Extra Photos: +$15</span>
+                    <span>Additional Person: +$5</span>
+                </div>
+                <h4>Booking Details</h4>
+                <ul class="booking-details-list">
+                    <li>$15 deposit required to secure your spot (goes towards your balance)</li>
+                    <li>Please try to arrive on time so we can make the most out of your session</li>
+                    <li>If you need to reschedule, just let me know a day in advance</li>
+                    <li>Photos will be delivered within 7 days</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sports Packages -->
+        <div class="prices-panel" id="panel-sports">
+            <div class="prices-grid prices-grid-2">
+                <div class="price-card">
+                    <div class="price-card-image">
+                        <img src="soccer.jpg" alt="Sports Basic">
+                        <div class="price-card-overlay">
+                            <h3>Basic</h3>
+                            <span class="price-amount">$20</span>
+                        </div>
+                    </div>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>5</span>
+                        </div>
                     </div>
                 </div>
-                <div class="price-details">
-                    <div class="price-detail-row">
-                        <span>Duration</span>
-                        <span>2 Hours</span>
+                <div class="price-card featured">
+                    <div class="price-card-image">
+                        <img src="soccer.jpg" alt="Sports Standard">
+                        <div class="price-card-overlay">
+                            <h3>Standard</h3>
+                            <span class="price-amount">$30</span>
+                        </div>
                     </div>
-                    <div class="price-detail-row">
-                        <span>Number of Photos</span>
-                        <span>50-70</span>
-                    </div>
-                    <div class="price-detail-row">
-                        <span>Consultation on Style</span>
-                        <span></span>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>10</span>
+                        </div>
+                        <a href="#booking" class="btn btn-small">Book</a>
                     </div>
                 </div>
             </div>
-            <div class="price-card featured">
-                <div class="price-card-image">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop" alt="Maximum package">
-                    <div class="price-card-overlay">
-                        <h3>Package "Maximum"</h3>
-                        <span class="price-amount">$250</span>
+            <div class="prices-addons">
+                <h4>Add-ons</h4>
+                <div class="addons-grid">
+                    <span>1 Individual Edited Photo: +$3</span>
+                    <span>5 Extra Edited Photos: +$10</span>
+                    <span>10 Extra Edited Photos: +$15</span>
+                    <span>Extra Player: +$10</span>
+                    <span>24-Hour Delivery: +$10</span>
+                </div>
+                <p class="addons-note">Travel fees may apply depending on location</p>
+            </div>
+        </div>
+
+        <!-- Small Sessions Packages -->
+        <div class="prices-panel" id="panel-small">
+            <div class="prices-grid">
+                <div class="price-card">
+                    <div class="price-card-image">
+                        <img src="family.jpg" alt="Small Session Basic">
+                        <div class="price-card-overlay">
+                            <h3>Basic</h3>
+                            <span class="price-amount">$—</span>
+                        </div>
+                    </div>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Duration</span>
+                            <span>—</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Number of Photos</span>
+                            <span>—</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>—</span>
+                        </div>
                     </div>
                 </div>
-                <div class="price-details">
-                    <div class="price-detail-row">
-                        <span>Duration</span>
-                        <span>2 Hours</span>
+                <div class="price-card">
+                    <div class="price-card-image">
+                        <img src="family.jpg" alt="Small Session Standard">
+                        <div class="price-card-overlay">
+                            <h3>Standard</h3>
+                            <span class="price-amount">$—</span>
+                        </div>
                     </div>
-                    <div class="price-detail-row">
-                        <span>Number of Photos</span>
-                        <span>All</span>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Duration</span>
+                            <span>—</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Number of Photos</span>
+                            <span>—</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>—</span>
+                        </div>
                     </div>
-                    <div class="price-detail-row">
-                        <span>Consultation on Style</span>
-                        <span></span>
+                </div>
+                <div class="price-card featured">
+                    <div class="price-card-image">
+                        <img src="family.jpg" alt="Small Session Premium">
+                        <div class="price-card-overlay">
+                            <h3>Premium</h3>
+                            <span class="price-amount">$—</span>
+                        </div>
                     </div>
-                    <a href="#contact" class="btn btn-small">Book</a>
+                    <div class="price-details">
+                        <div class="price-detail-row">
+                            <span>Duration</span>
+                            <span>—</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Number of Photos</span>
+                            <span>—</span>
+                        </div>
+                        <div class="price-detail-row">
+                            <span>Edited Photos</span>
+                            <span>—</span>
+                        </div>
+                        <a href="#booking" class="btn btn-small">Book</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="section-header">
+            <h2>Book a Session</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="cal-embed-wrapper">
+            <div id="cal-inline"></div>
         </div>
     </section>
 
@@ -219,8 +395,8 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <span class="footer-logo"><span class="logo-s">S</span><span class="logo-r">R</span></span>
-                <p>fotosxsofia@gmail.com</p>
-                <p>+1 (555) 123-4567</p>
+                <p>reyeseve006@gmail.com</p>
+                <p>+1 (346) 946-5681</p>
             </div>
             <div class="footer-nav">
                 <a href="#about">About Me</a>
@@ -229,25 +405,19 @@
                 <a href="#contact">Contacts</a>
             </div>
             <div class="footer-socials">
-                <a href="#" aria-label="Instagram">
+                <a href="https://www.instagram.com/fotosxs0fia/" target="_blank" aria-label="Instagram">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <rect x="2" y="2" width="20" height="20" rx="5"/>
                         <circle cx="12" cy="12" r="5"/>
                         <circle cx="17.5" cy="6.5" r="1.5"/>
                     </svg>
                 </a>
-                <a href="#" aria-label="TikTok">
+                <a href="mailto:reyeseve006@gmail.com" aria-label="Email">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M22 4L12 13 2 4"/>
                     </svg>
                 </a>
-            </div>
-            <div class="footer-subscribe">
-                <h4>Stay in Touch</h4>
-                <form class="subscribe-form" onsubmit="return false;">
-                    <input type="email" placeholder="E-mail" required>
-                    <button type="submit" class="btn btn-small">Subscribe</button>
-                </form>
             </div>
         </div>
         <div class="footer-bottom">
@@ -256,5 +426,24 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else { p(cal, ar); } return; } p(cal, ar); };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", {origin: "https://cal.com"});
+    Cal("inline", {
+        elementOrSelector: "#cal-inline",
+        calLink: "sofia-reyes-ynhn7k",
+        layout: "month_view"
+    });
+    Cal("ui", {
+        styles: { branding: { brandColor: "#b8633e" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+    });
+    </script>
 </body>
 </html>

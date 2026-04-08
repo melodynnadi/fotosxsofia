@@ -42,6 +42,19 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
+// Prices tabs
+const priceTabs = document.querySelectorAll('.prices-tab');
+const pricePanels = document.querySelectorAll('.prices-panel');
+
+priceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        priceTabs.forEach(t => t.classList.remove('active'));
+        pricePanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+});
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
