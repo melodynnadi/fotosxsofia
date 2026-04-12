@@ -65,3 +65,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Contact form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+            if (response.ok) {
+                contactForm.innerHTML = '<div class="booking-confirm show"><h3>Message Sent!</h3><p>Thanks for reaching out. Sofia will get back to you soon.</p></div>';
+            } else {
+                alert('Something went wrong. Please try again or email reyeseve006@gmail.com directly.');
+            }
+        }).catch(function () {
+            alert('Something went wrong. Please try again or email reyeseve006@gmail.com directly.');
+        });
+    });
+}

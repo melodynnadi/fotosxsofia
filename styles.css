@@ -674,7 +674,7 @@ h1, h2, h3, h4 {
 
 /* ========== Booking ========== */
 .booking {
-    padding: 100px 0;
+    padding: 80px 0 60px;
     background: var(--bg);
 }
 
@@ -682,7 +682,8 @@ h1, h2, h3, h4 {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 80px;
-    min-height: 500px;
+    min-height: 320px;
+    overflow: hidden;
 }
 
 .booking-form-grid {
@@ -860,19 +861,21 @@ h1, h2, h3, h4 {
 
 /* ========== Testimonial ========== */
 .testimonial {
-    padding: 100px 80px;
-    display: flex;
-    justify-content: center;
+    padding: 60px 0 80px;
+}
+
+.testimonial .section-header {
+    margin-bottom: 60px;
 }
 
 .testimonial-card {
     text-align: center;
     max-width: 550px;
+    margin: 40px auto 0;
     border: 1px solid var(--accent);
     border-radius: 4px;
     padding: 48px 40px 40px;
     position: relative;
-    margin-top: 30px;
 }
 
 .testimonial-avatar {
@@ -902,6 +905,55 @@ h1, h2, h3, h4 {
     line-height: 1.8;
     color: var(--text-light);
     font-style: italic;
+}
+
+/* ========== Contact ========== */
+.contact {
+    padding: 60px 0 80px;
+    background: var(--bg);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.contact-info p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 32px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.contact-detail svg {
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.contact-detail a {
+    color: var(--text-light);
+}
+
+.contact-detail a:hover {
+    color: var(--accent);
+}
+
+.contact-form .btn {
+    width: 100%;
+    margin-top: 8px;
 }
 
 /* ========== Footer ========== */
@@ -1147,6 +1199,14 @@ h1, h2, h3, h4 {
     .booking-form-grid {
         gap: 40px;
     }
+
+    .cal-embed-wrapper {
+        padding: 0 40px;
+    }
+
+    .contact-wrapper {
+        padding: 0 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1295,5 +1355,20 @@ h1, h2, h3, h4 {
     .booking-form-grid {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    .cal-embed-wrapper {
+        padding: 0 16px;
+        min-height: 400px;
+    }
+
+    .booking {
+        padding: 60px 0;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+        gap: 40px;
     }
 }
