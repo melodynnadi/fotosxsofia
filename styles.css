@@ -1302,7 +1302,25 @@ h1, h2, h3, h4 {
         padding: 0 24px;
     }
 
+    .prices-tabs {
+        flex-wrap: wrap;
+        padding: 0 24px;
+        gap: 6px;
+    }
+
+    .prices-tab {
+        padding: 8px 20px;
+        font-size: 0.7rem;
+    }
+
     .prices-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .prices-grid-2 {
         grid-template-columns: 1fr;
         max-width: 400px;
         margin: 0 auto;
@@ -1313,8 +1331,29 @@ h1, h2, h3, h4 {
         transform: none;
     }
 
+    .prices-addons {
+        margin-left: 24px;
+        margin-right: 24px;
+        padding: 28px 24px;
+    }
+
+    .addons-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
     .testimonial {
         padding: 80px 24px;
+    }
+
+    .testimonial-grid {
+        gap: 50px;
+        margin-top: 50px;
+    }
+
+    .testimonial-card {
+        max-width: 100%;
+        padding: 48px 24px 32px;
     }
 
     .footer {
@@ -1382,5 +1421,124 @@ h1, h2, h3, h4 {
         grid-template-columns: 1fr;
         padding: 0 24px;
         gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-socials {
+        right: 12px;
+        gap: 14px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+        bottom: 20px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+    .about {
+        padding: 60px 16px;
+    }
+
+    .about-images {
+        width: 240px;
+        height: 290px;
+    }
+
+    .about-img-back {
+        width: 150px;
+        height: 190px;
+    }
+
+    .about-img-front {
+        width: 170px;
+        height: 210px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    .section-header {
+        padding: 0 16px;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .prices-tabs {
+        padding: 0 16px;
+    }
+
+    .prices-grid,
+    .prices-grid-2 {
+        padding: 0 16px;
+    }
+
+    .prices-addons {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 24px 16px;
+    }
+
+    .testimonial {
+        padding: 60px 16px;
+    }
+
+    .testimonial-card {
+        padding: 40px 16px 28px;
+    }
+
+    .testimonial-card p {
+        font-size: 0.8rem;
+    }
+
+    .gallery-grid {
+        columns: 1;
+        padding: 0 16px 40px;
+    }
+
+    .gallery-header {
+        padding: 90px 16px 24px;
+    }
+
+    .gallery-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-wrapper {
+        padding: 0 16px;
+        gap: 32px;
+    }
+
+    .cal-embed-wrapper {
+        padding: 0 8px;
+    }
+
+    .footer {
+        padding: 32px 16px 16px;
     }
 }
