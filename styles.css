@@ -871,11 +871,23 @@ h1, h2, h3, h4 {
 .testimonial-card {
     text-align: center;
     max-width: 550px;
-    margin: 40px auto 0;
+    margin: 0 auto;
     border: 1px solid var(--accent);
     border-radius: 4px;
     padding: 48px 40px 40px;
     position: relative;
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
 }
 
 .testimonial-avatar {
