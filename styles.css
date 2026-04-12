@@ -225,7 +225,7 @@ h1, h2, h3, h4 {
     height: 100vh;
     min-height: 600px;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-                url('hero.png');
+                url('hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
