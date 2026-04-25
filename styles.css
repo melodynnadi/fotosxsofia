@@ -1542,3 +1542,329 @@ h1, h2, h3, h4 {
         padding: 32px 16px 16px;
     }
 }
+
+/* ========== Custom Booking Widget ========== */
+.booking-widget {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.booking-step {
+    display: none;
+}
+
+.booking-step.active {
+    display: block;
+}
+
+.booking-step-title {
+    font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    color: var(--text, #3a3a3a);
+    margin-bottom: 24px;
+}
+
+/* Package Buttons */
+.booking-packages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.booking-pkg-btn {
+    font-family: var(--font-body, 'Jost', Arial, sans-serif);
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    border: 1px solid var(--border, #d4c5b9);
+    background: var(--bg-light, #faf7f4);
+    color: var(--text, #3a3a3a);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.booking-pkg-btn:hover,
+.booking-pkg-btn.selected {
+    border-color: var(--accent, #b8633e);
+    background: var(--accent, #b8633e);
+    color: #fff;
+}
+
+/* Calendar */
+.booking-calendar-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.bk-cal {
+    user-select: none;
+}
+
+.bk-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.bk-cal-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text, #3a3a3a);
+    letter-spacing: 0.5px;
+}
+
+.bk-cal-nav {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-light, #7a6e67);
+    padding: 4px 8px;
+    transition: color 0.2s;
+}
+
+.bk-cal-nav:hover {
+    color: var(--accent, #b8633e);
+}
+
+.bk-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.bk-cal-day-name {
+    text-align: center;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--text-light, #7a6e67);
+    padding: 4px 0;
+    letter-spacing: 0.5px;
+}
+
+.bk-cal-day,
+.bk-cal-empty {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    border-radius: 50%;
+    cursor: default;
+    transition: all 0.15s ease;
+}
+
+.bk-cal-day--available {
+    color: var(--accent, #b8633e);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.bk-cal-day--available:hover {
+    background: rgba(184, 99, 62, 0.1);
+}
+
+.bk-cal-day--selected {
+    background: var(--accent, #b8633e);
+    color: #fff;
+    cursor: pointer;
+}
+
+.bk-cal-day--unavailable {
+    color: var(--border, #d4c5b9);
+}
+
+.bk-cal-day--past {
+    color: var(--border, #d4c5b9);
+}
+
+/* Time Slots */
+.time-slots-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.time-slots-hint {
+    font-size: 0.8rem;
+    color: var(--text-light, #7a6e67);
+    font-style: italic;
+    padding-top: 8px;
+}
+
+.time-slot-btn {
+    font-family: var(--font-body, 'Jost', Arial, sans-serif);
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    border: 1px solid var(--border, #d4c5b9);
+    background: var(--bg-light, #faf7f4);
+    cursor: pointer;
+    color: var(--text, #3a3a3a);
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.time-slot-btn:hover,
+.time-slot-btn.selected {
+    border-color: var(--accent, #b8633e);
+    background: var(--accent, #b8633e);
+    color: #fff;
+}
+
+/* Booking Form */
+.booking-form {
+    max-width: 480px;
+}
+
+/* Deposit Box */
+.deposit-box {
+    border: 1px solid var(--border, #d4c5b9);
+    background: var(--bg-light, #faf7f4);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.deposit-title {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--accent, #b8633e);
+    margin-bottom: 8px;
+}
+
+.deposit-instructions {
+    font-size: 0.85rem;
+    color: var(--text, #3a3a3a);
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.deposit-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.deposit-option {
+    flex: 1;
+    border: 1px solid var(--border, #d4c5b9);
+    background: #fff;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.deposit-option-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted, #7a6e67);
+}
+
+.deposit-option-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent, #b8633e);
+}
+
+.deposit-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text, #3a3a3a);
+    cursor: pointer;
+}
+
+.deposit-check input {
+    margin-top: 2px;
+    accent-color: var(--accent, #b8633e);
+    flex-shrink: 0;
+}
+
+/* Nav Buttons */
+.booking-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.booking-back-btn {
+    background: transparent;
+    color: var(--text-light, #7a6e67);
+    border-color: var(--border, #d4c5b9);
+}
+
+.booking-back-btn:hover {
+    border-color: var(--text, #3a3a3a);
+    background: transparent;
+    color: var(--text, #3a3a3a);
+}
+
+.booking-error {
+    color: #c0392b;
+    font-size: 0.83rem;
+    border: 1px solid #f5c6c2;
+    background: #fef2f1;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+}
+
+/* Success State */
+.booking-confirm {
+    text-align: center;
+    padding: 48px 24px;
+}
+
+.booking-confirm-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent, #b8633e);
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.booking-confirm h3 {
+    font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.booking-confirm p {
+    font-size: 0.9rem;
+    color: var(--text-light, #7a6e67);
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .booking-calendar-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

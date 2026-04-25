@@ -42,19 +42,6 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-// Prices tabs
-const priceTabs = document.querySelectorAll('.prices-tab');
-const pricePanels = document.querySelectorAll('.prices-panel');
-
-priceTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        priceTabs.forEach(t => t.classList.remove('active'));
-        pricePanels.forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-    });
-});
-
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -66,24 +53,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const formData = new FormData(contactForm);
-        fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        }).then(function (response) {
-            if (response.ok) {
-                contactForm.innerHTML = '<div class="booking-confirm show"><h3>Message Sent!</h3><p>Thanks for reaching out. Sofia will get back to you soon.</p></div>';
-            } else {
-                alert('Something went wrong. Please try again or email reyeseve006@gmail.com directly.');
-            }
-        }).catch(function () {
-            alert('Something went wrong. Please try again or email reyeseve006@gmail.com directly.');
-        });
-    });
-}

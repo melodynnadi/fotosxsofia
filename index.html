@@ -22,6 +22,7 @@
         <div class="nav-links-right">
             <a href="#prices">Prices</a>
             <a href="#contact">Contacts</a>
+            <a href="#booking">Book</a>
         </div>
         <button class="mobile-menu-btn" aria-label="Toggle menu">
             <span></span>
@@ -33,6 +34,7 @@
             <a href="#portfolio">Portfolio</a>
             <a href="#prices">Prices</a>
             <a href="#contact">Contacts</a>
+            <a href="#booking">Book</a>
         </div>
     </nav>
 
@@ -132,240 +134,26 @@
             <div class="section-line"></div>
         </div>
 
-        <div class="prices-tabs">
-            <button class="prices-tab active" data-tab="graduation">Graduation</button>
-            <button class="prices-tab" data-tab="sports">Sports</button>
-            <button class="prices-tab" data-tab="small">Small Sessions</button>
-        </div>
+        <div class="prices-tabs" id="pricesTabs"></div>
+        <div id="pricesPanels"></div>
 
-        <!-- Graduation Packages -->
-        <div class="prices-panel active" id="panel-graduation">
-            <div class="prices-grid">
-                <div class="price-card">
-                    <div class="price-card-image">
-                        <img src="graduation.jpg" alt="Graduation Basic" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Basic</h3>
-                            <span class="price-amount">$50</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Duration</span>
-                            <span>25 min</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Outfits</span>
-                            <span>1</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Locations</span>
-                            <span>1</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>10</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-card">
-                    <div class="price-card-image">
-                        <img src="graduation.jpg" alt="Graduation Silver" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Silver</h3>
-                            <span class="price-amount">$100</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Duration</span>
-                            <span>45 min</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Outfits</span>
-                            <span>2</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Locations</span>
-                            <span>1–2</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>20</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-card featured">
-                    <div class="price-card-image">
-                        <img src="graduation.jpg" alt="Graduation Gold" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Gold</h3>
-                            <span class="price-amount">$150</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Duration</span>
-                            <span>60–75 min</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Outfits</span>
-                            <span>2–3</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Locations</span>
-                            <span>2–3</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>30</span>
-                        </div>
-                        <a href="#booking" class="btn btn-small">Book</a>
-                    </div>
-                </div>
+        <div class="prices-addons">
+            <h4>Add-ons</h4>
+            <div class="addons-grid">
+                <span>Extra Location: +$10</span>
+                <span>Extra Outfit: +$10</span>
+                <span>Extra Edited Photo: +$2</span>
+                <span>5 Extra Photos: +$10</span>
+                <span>10 Extra Photos: +$15</span>
+                <span>Additional Person: +$5</span>
             </div>
-            <div class="prices-addons">
-                <h4>Add-ons</h4>
-                <div class="addons-grid">
-                    <span>Extra Location: +$10</span>
-                    <span>Extra Outfit: +$10</span>
-                    <span>Extra Edited Photo: +$2</span>
-                    <span>5 Extra Photos: +$10</span>
-                    <span>10 Extra Photos: +$15</span>
-                    <span>Additional Person: +$5</span>
-                </div>
-                <h4>Booking Details</h4>
-                <ul class="booking-details-list">
-                    <li>$15 deposit required to secure your spot (goes towards your balance)</li>
-                    <li>Please try to arrive on time so we can make the most out of your session</li>
-                    <li>If you need to reschedule, just let me know a day in advance</li>
-                    <li>Photos will be delivered within 7 days</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Sports Packages -->
-        <div class="prices-panel" id="panel-sports">
-            <div class="prices-grid prices-grid-2">
-                <div class="price-card">
-                    <div class="price-card-image">
-                        <img src="soccer.jpg" alt="Sports Basic" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Basic</h3>
-                            <span class="price-amount">$20</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>5</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-card featured">
-                    <div class="price-card-image">
-                        <img src="soccer.jpg" alt="Sports Standard" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Standard</h3>
-                            <span class="price-amount">$30</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>10</span>
-                        </div>
-                        <a href="#booking" class="btn btn-small">Book</a>
-                    </div>
-                </div>
-            </div>
-            <div class="prices-addons">
-                <h4>Add-ons</h4>
-                <div class="addons-grid">
-                    <span>1 Individual Edited Photo: +$3</span>
-                    <span>5 Extra Edited Photos: +$10</span>
-                    <span>10 Extra Edited Photos: +$15</span>
-                    <span>Extra Player: +$10</span>
-                    <span>24-Hour Delivery: +$10</span>
-                </div>
-                <p class="addons-note">Travel fees may apply depending on location</p>
-            </div>
-        </div>
-
-        <!-- Small Sessions Packages -->
-        <div class="prices-panel" id="panel-small">
-            <div class="prices-grid">
-                <div class="price-card">
-                    <div class="price-card-image">
-                        <img src="family.jpg" alt="Small Session Basic" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Basic</h3>
-                            <span class="price-amount">$—</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Duration</span>
-                            <span>—</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Number of Photos</span>
-                            <span>—</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>—</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-card">
-                    <div class="price-card-image">
-                        <img src="family.jpg" alt="Small Session Standard" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Standard</h3>
-                            <span class="price-amount">$—</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Duration</span>
-                            <span>—</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Number of Photos</span>
-                            <span>—</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>—</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-card featured">
-                    <div class="price-card-image">
-                        <img src="family.jpg" alt="Small Session Premium" loading="lazy">
-                        <div class="price-card-overlay">
-                            <h3>Premium</h3>
-                            <span class="price-amount">$—</span>
-                        </div>
-                    </div>
-                    <div class="price-details">
-                        <div class="price-detail-row">
-                            <span>Duration</span>
-                            <span>—</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Number of Photos</span>
-                            <span>—</span>
-                        </div>
-                        <div class="price-detail-row">
-                            <span>Edited Photos</span>
-                            <span>—</span>
-                        </div>
-                        <a href="#booking" class="btn btn-small">Book</a>
-                    </div>
-                </div>
-            </div>
+            <h4>Booking Details</h4>
+            <ul class="booking-details-list">
+                <li>$15 deposit required to secure your spot (goes towards your balance)</li>
+                <li>Please try to arrive on time so we can make the most out of your session</li>
+                <li>If you need to reschedule, just let me know a day in advance</li>
+                <li>Photos will be delivered within 7 days</li>
+            </ul>
         </div>
     </section>
 
@@ -375,8 +163,94 @@
             <h2>Book a Session</h2>
             <div class="section-line"></div>
         </div>
-        <div class="cal-embed-wrapper">
-            <div id="cal-inline"></div>
+        <div class="booking-widget" id="bookingWidget">
+
+            <!-- Step 1: Package -->
+            <div class="booking-step active" id="step-package">
+                <h3 class="booking-step-title">Select a Package</h3>
+                <div class="booking-packages">
+                    <button class="booking-pkg-btn" data-pkg="graduation_basic">Graduation Basic</button>
+                    <button class="booking-pkg-btn" data-pkg="graduation_silver">Graduation Silver</button>
+                    <button class="booking-pkg-btn" data-pkg="graduation_gold">Graduation Gold</button>
+                    <button class="booking-pkg-btn" data-pkg="sports_basic">Sports — Action Only</button>
+                    <button class="booking-pkg-btn" data-pkg="sports_standard">Sports — Action + Portraits</button>
+                    <button class="booking-pkg-btn" data-pkg="lovestory">Love Story Session</button>
+                    <button class="booking-pkg-btn" data-pkg="family">Family Session</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Date & Time -->
+            <div class="booking-step" id="step-datetime">
+                <h3 class="booking-step-title">Choose a Date & Time</h3>
+                <div class="booking-calendar-wrapper">
+                    <div id="bookingCalendar"></div>
+                    <div id="timeSlots" class="time-slots-panel">
+                        <p class="time-slots-hint">Select a date to see available times.</p>
+                    </div>
+                </div>
+                <div class="booking-nav">
+                    <button class="btn booking-back-btn" data-back="step-package">← Back</button>
+                    <button class="btn booking-next-btn" id="datetimeNext" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Your Info -->
+            <div class="booking-step" id="step-info">
+                <h3 class="booking-step-title">Your Information</h3>
+                <form id="bookingInfoForm" class="booking-form">
+                    <div class="form-group">
+                        <label for="bkName">Full Name *</label>
+                        <input type="text" id="bkName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bkEmail">Email Address *</label>
+                        <input type="email" id="bkEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bkPhone">Phone Number (optional)</label>
+                        <input type="tel" id="bkPhone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="bkNotes">Notes / Add-ons (optional)</label>
+                        <textarea id="bkNotes" name="notes" rows="3"></textarea>
+                    </div>
+                    <div class="deposit-box">
+                        <p class="deposit-title">$15 Deposit Required</p>
+                        <p class="deposit-instructions">
+                            To secure your spot, please send a <strong>$15 deposit</strong> using one of the options below. Include your name in the memo.
+                        </p>
+                        <div class="deposit-options">
+                            <div class="deposit-option">
+                                <span class="deposit-option-label">Zelle</span>
+                                <span class="deposit-option-value">3469465681</span>
+                            </div>
+                            <div class="deposit-option">
+                                <span class="deposit-option-label">CashApp</span>
+                                <span class="deposit-option-value">$s0fiareyes</span>
+                            </div>
+                        </div>
+                        <label class="deposit-check">
+                            <input type="checkbox" id="depositAck" required>
+                            I understand I need to send the $15 deposit to hold my spot
+                        </label>
+                    </div>
+                    <p id="bookingError" class="booking-error" style="display:none"></p>
+                    <div class="booking-nav">
+                        <button type="button" class="btn booking-back-btn" data-back="step-datetime">← Back</button>
+                        <button type="submit" class="btn" id="submitBooking">Submit Booking Request</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 4: Success -->
+            <div class="booking-step" id="step-success">
+                <div class="booking-confirm">
+                    <div class="booking-confirm-icon">✓</div>
+                    <h3>Request Submitted!</h3>
+                    <p>Your booking request has been received. Sofia will confirm your session once she receives your $15 deposit (Zelle or CashApp). Check your email for details.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -386,21 +260,7 @@
             <h2>What Clients Say</h2>
             <div class="section-line"></div>
         </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-avatar">
-                    <img src="LinkedinProfile.jpeg" alt="Client" loading="lazy">
-                </div>
-                <h4>Melody Nnadi</h4>
-                <p>"The time that I worked with Sofia was amazing. I learned so much from her, and gained a lot of confidence during our shoot. I hope to work with Sofia again!"</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-avatar">
-                    <img src="abby-mcguire.jpg" alt="Client" loading="lazy">
-                </div>
-                <h4>Abby Mcguire</h4>
-                <p>"Sofie did an amazing job with my graduation photos! The whole experience was super fun, and the photos turned out even better than I could have imagined. She took some of the ideas I had and executed them perfectly. We were indoors, outdoors, on a soccer field, and in the trees. Whatever the setting, the pictures came out high quality. I definitely look forward to working with her again!"</p>
-            </div>
+        <div class="testimonial-grid" id="testimonialGrid">
         </div>
     </section>
 
@@ -426,7 +286,7 @@
                     <a href="https://www.instagram.com/fotosxs0fia/" target="_blank">@fotosxs0fia</a>
                 </div>
             </div>
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeepvqbn" method="POST">
+            <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="contactName">Name</label>
                     <input type="text" id="contactName" name="name" placeholder="Your name" required>
@@ -443,7 +303,8 @@
                     <label for="contactMessage">Message</label>
                     <textarea id="contactMessage" name="message" rows="5" placeholder="Your message..." required></textarea>
                 </div>
-                <button type="submit" class="btn">Send Message</button>
+                <button type="submit" class="btn" id="contactSubmitBtn">Send Message</button>
+                <p id="contactStatus" style="display:none; margin-top:12px; font-size:14px;"></p>
             </form>
         </div>
     </section>
@@ -484,42 +345,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-    (function (C, A, L) {
-        let p = function (a, ar) { a.q.push(ar); };
-        let d = C.document;
-        C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else { p(cal, ar); } return; } p(cal, ar); };
-    })(window, "https://app.cal.com/embed/embed.js", "init");
-
-    Cal("init", {origin: "https://cal.com"});
-    Cal("inline", {
-        elementOrSelector: "#cal-inline",
-        calLink: "sofia-reyes-yvhn7k",
-        layout: "month_view",
-        config: { theme: "light" }
-    });
-    Cal("ui", {
-        theme: "light",
-        cssVarsPerTheme: {
-            light: {
-                "cal-brand": "#b8633e",
-                "cal-brand-emphasis": "#a0542f",
-                "cal-brand-text": "#ffffff",
-                "cal-brand-subtle": "#f5f0eb",
-                "cal-text": "#3a3a3a",
-                "cal-text-emphasis": "#3a3a3a",
-                "cal-text-subtle": "#6b6b6b",
-                "cal-border": "#d4c5b9",
-                "cal-border-emphasis": "#b8633e",
-                "cal-bg": "#faf7f4",
-                "cal-bg-emphasis": "#f5f0eb",
-                "cal-bg-subtle": "#faf7f4",
-                "cal-bg-muted": "#f5f0eb"
-            }
-        },
-        hideEventTypeDetails: false,
-        layout: "month_view"
-    });
-    </script>
+    <script src="booking.js"></script>
 </body>
 </html>
