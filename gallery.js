@@ -1,7 +1,7 @@
 // fotosxsofia — Dynamic Gallery Loader
 const GALLERY_ADMIN_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
   ? 'http://localhost:3000'
-  : 'https://fotosbysofia-admin.netlify.app';
+  : 'https://fotosxsofiaadmin.netlify.app';
 
 async function loadGallery() {
   const grid = document.getElementById('galleryGrid');

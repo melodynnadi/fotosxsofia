@@ -1,7 +1,7 @@
 // fotosxsofia — Custom Booking Widget
 const ADMIN_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
   ? 'http://localhost:3000'
-  : 'https://fotosbysofia-admin.netlify.app';
+  : 'https://fotosxsofiaadmin.netlify.app';
 
 const ZELLE_CONTACT = ''; // Will be set from API or hardcode Sofia's Zelle here once known
 
