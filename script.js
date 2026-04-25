@@ -53,3 +53,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Load bio content dynamically from admin
+const BIO_ADMIN_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:3000'
+  : 'https://fotosxsofiaadmin.netlify.app';
+
+async function loadBio() {
+  try {
+    const res = await fetch(`${BIO_ADMIN_URL}/api/bio`);
+    if (!res.ok) return;
+    const { bio } = await res.json();
+
+    const heading = document.getElementById('bioHeading');
+    const p1 = document.getElementById('bioParagraph1');
+    const p2 = document.getElementById('bioParagraph2');
+    const portrait = document.getElementById('bioPortrait');
+
+    if (heading && bio.heading) heading.textContent = bio.heading;
+    if (p1 && bio.paragraph1) p1.textContent = bio.paragraph1;
+    if (p2 && bio.paragraph2) p2.textContent = bio.paragraph2;
+    if (portrait && bio.imageUrl) portrait.src = bio.imageUrl;
+  } catch {
+    // Keep static fallback on error
+  }
+}
+
+loadBio();
+

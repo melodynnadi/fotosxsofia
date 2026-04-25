@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/melod/Desktop/.git/**)",
+      "Read(//c/Users/melod/Desktop/fotosbysofia-admin/**)",
+      "Bash(git -C \"/c/Users/melod/Desktop\" log --oneline)"
+    ]
+  }
+}
