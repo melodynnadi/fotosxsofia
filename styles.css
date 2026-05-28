@@ -571,7 +571,7 @@ h1, h2, h3, h4 {
 }
 
 .booking-details-list li::before {
-    content: 'â†’';
+    content: 'GåÆ';
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -1868,3 +1868,4 @@ h1, h2, h3, h4 {
         align-items: stretch;
     }
 }
+

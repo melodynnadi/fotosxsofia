@@ -58,6 +58,87 @@ const BIO_ADMIN_URL = (window.location.hostname === 'localhost' || window.locati
   ? 'http://localhost:3000'
   : 'https://fotosxsofiaadmin.netlify.app';
 
+const CATEGORY_PREVIEW_IMAGES = {
+  sports: 'soccer.jpg',
+  graduation: 'graduation.jpg',
+  lovestory: 'lovestory.jpg',
+  family: 'family.jpg',
+};
+
+const STATIC_CATEGORY_PAGES = {
+  sports: 'sports.html',
+  graduation: 'graduation.html',
+  lovestory: 'lovestory.html',
+  family: 'family.html',
+};
+
+function slugToLabel(slug) {
+  return slug
+    .replace(/-/g, ' ')
+    .replace(/\b[a-z]/g, (match) => match.toUpperCase());
+}
+
+function getCategoryImage(slug) {
+  return CATEGORY_PREVIEW_IMAGES[slug] || 'hero.png';
+}
+
+function getCategoryPage(slug) {
+  return STATIC_CATEGORY_PAGES[slug] || `gallery.html?category=${encodeURIComponent(slug)}`;
+}
+
+function createCategoryCard(category) {
+  const href = getCategoryPage(category.slug);
+  const image = getCategoryImage(category.slug);
+  const label = category.label || slugToLabel(category.slug);
+
+  return `
+    <div class="portfolio-slide">
+      <a href="${href}" class="portfolio-card">
+        <img src="${image}" alt="${label} photography" loading="lazy">
+        <div class="portfolio-overlay">
+          <span>${label}</span>
+        </div>
+      </a>
+    </div>
+  `;
+}
+
+function initPortfolioCarousel() {
+  const track = document.getElementById('portfolioTrack');
+  const prev = document.getElementById('portfolioPrev');
+  const next = document.getElementById('portfolioNext');
+  if (!track || !prev || !next) return;
+
+  prev.addEventListener('click', () => {
+    track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', () => {
+    track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+  });
+}
+
+async function loadPortfolioCategories() {
+  const track = document.getElementById('portfolioTrack');
+  const carousel = document.getElementById('portfolioCarousel');
+  const fallback = document.getElementById('portfolioFallback');
+  if (!track || !carousel || !fallback) return;
+
+  try {
+    const res = await fetch(`${BIO_ADMIN_URL}/api/gallery-categories`);
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data.categories || data.categories.length === 0) return;
+
+    track.innerHTML = data.categories.map(createCategoryCard).join('');
+    fallback.style.display = 'none';
+    carousel.style.display = 'flex';
+    initPortfolioCarousel();
+  } catch {
+    // Keep static fallback on error
+  }
+}
+
 async function loadBio() {
   try {
     const res = await fetch(`${BIO_ADMIN_URL}/api/bio`);
@@ -79,4 +160,6 @@ async function loadBio() {
 }
 
 loadBio();
+loadPortfolioCategories();
+
 
