@@ -99,7 +99,13 @@
             <h2>Portfolio</h2>
             <div class="section-line"></div>
         </div>
-        <div class="portfolio-grid">
+        <div class="portfolio-carousel" id="portfolioCarousel" aria-label="Portfolio categories carousel">
+            <button class="carousel-btn prev" id="portfolioPrev" aria-label="Previous category">←</button>
+            <div class="carousel-track" id="portfolioTrack"></div>
+            <button class="carousel-btn next" id="portfolioNext" aria-label="Next category">→</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioFallback">
             <a href="sports.html" class="portfolio-card">
                 <img src="soccer.jpg" alt="Sports photography" loading="lazy">
                 <div class="portfolio-overlay">
@@ -260,7 +266,10 @@
             <h2>What Clients Say</h2>
             <div class="section-line"></div>
         </div>
-        <div class="testimonial-grid" id="testimonialGrid">
+        <div class="testimonial-carousel" id="testimonialCarousel" aria-label="Client testimonials carousel">
+            <button class="carousel-btn prev" id="testimonialPrev" aria-label="Previous testimonial">←</button>
+            <div class="testimonial-track" id="testimonialGrid"></div>
+            <button class="carousel-btn next" id="testimonialNext" aria-label="Next testimonial">→</button>
         </div>
     </section>
 

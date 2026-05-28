@@ -426,11 +426,80 @@ h1, h2, h3, h4 {
     padding: 0 80px;
 }
 
-.portfolio-card {
+.portfolio-carousel {
+    display: none;
     position: relative;
-    overflow: hidden;
-    aspect-ratio: 3/4;
+    padding: 0 80px;
+    margin-top: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-slide {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    position: relative;
+    min-width: 320px;
+}
+
+.portfolio-slide img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--white);
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
     cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    background: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+.portfolio-card,
+.portfolio-slide .portfolio-card {
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.portfolio-slide .portfolio-overlay {
+    border-radius: 0;
+    padding: 18px;
 }
 
 .portfolio-card img {
@@ -465,6 +534,41 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
     color: var(--white);
     font-weight: 400;
+}
+
+@media (max-width: 1100px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 40px;
+    }
+
+    .portfolio-carousel {
+        padding: 0 40px;
+    }
+
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .portfolio-carousel {
+        padding: 0 20px;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .portfolio-slide {
+        min-width: 85%;
+    }
 }
 
 /* ========== Prices ========== */
@@ -571,7 +675,7 @@ h1, h2, h3, h4 {
 }
 
 .booking-details-list li::before {
-    content: 'GåÆ';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -868,26 +972,42 @@ h1, h2, h3, h4 {
     margin-bottom: 60px;
 }
 
-.testimonial-card {
-    text-align: center;
-    max-width: 550px;
-    margin: 0 auto;
-    border: 1px solid var(--accent);
-    border-radius: 4px;
-    padding: 48px 40px 40px;
+.testimonial-carousel {
     position: relative;
+    padding: 0 80px;
+    margin-top: 20px;
 }
 
-.testimonial-grid {
+.testimonial-track {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 24px;
+    align-items: stretch;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 2px 12px;
+}
+
+.testimonial-slide {
+    display: flex;
+    flex: 0 0 380px;
+    min-width: 380px;
+    scroll-snap-align: start;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 36px 40px 40px;
+    position: relative;
+    background: var(--bg-light);
 }
 
 .testimonial-avatar {
@@ -895,7 +1015,7 @@ h1, h2, h3, h4 {
     height: 60px;
     border-radius: 50%;
     overflow: hidden;
-    margin: -78px auto 16px;
+    margin: 0 auto 16px;
     border: 3px solid var(--bg);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
@@ -1346,13 +1466,20 @@ h1, h2, h3, h4 {
         padding: 80px 24px;
     }
 
-    .testimonial-grid {
-        gap: 50px;
-        margin-top: 50px;
+    .testimonial-carousel {
+        padding: 0 40px;
+    }
+
+    .testimonial-track {
+        gap: 20px;
+    }
+
+    .testimonial-slide {
+        flex-basis: 340px;
+        min-width: 340px;
     }
 
     .testimonial-card {
-        max-width: 100%;
         padding: 48px 24px 32px;
     }
 
@@ -1506,6 +1633,19 @@ h1, h2, h3, h4 {
 
     .testimonial {
         padding: 60px 16px;
+    }
+
+    .testimonial-carousel {
+        padding: 0 16px;
+    }
+
+    .testimonial-track {
+        gap: 14px;
+    }
+
+    .testimonial-slide {
+        flex-basis: calc(100vw - 52px);
+        min-width: calc(100vw - 52px);
     }
 
     .testimonial-card {
@@ -1868,4 +2008,3 @@ h1, h2, h3, h4 {
         align-items: stretch;
     }
 }
-

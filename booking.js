@@ -390,6 +390,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── Dynamic testimonials ───────────────────────────────────────────────────
+function initTestimonialCarousel() {
+  const track = document.getElementById('testimonialGrid');
+  const prev = document.getElementById('testimonialPrev');
+  const next = document.getElementById('testimonialNext');
+  if (!track || !prev || !next) return;
+
+  prev.addEventListener('click', () => {
+    track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', () => {
+    track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+  });
+}
+
 async function loadTestimonials() {
   const grid = document.getElementById('testimonialGrid');
   if (!grid) return;
@@ -401,16 +416,20 @@ async function loadTestimonials() {
     grid.innerHTML = testimonials.map(t => {
       const fallback = `https://ui-avatars.com/api/?name=${encodeURIComponent(t.clientName)}&background=b8633e&color=fff`;
       return `
-        <div class="testimonial-card">
-          <div class="testimonial-avatar">
-            <img src="${t.clientPhotoUrl || fallback}" alt="${t.clientName}" loading="lazy"
-                 onerror="this.src='${fallback}'">
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img src="${t.clientPhotoUrl || fallback}" alt="${t.clientName}" loading="lazy"
+                  onerror="this.src='${fallback}'">
+            </div>
+            <h4>${t.clientName}</h4>
+            <p>"${t.testimonialText}"</p>
           </div>
-          <h4>${t.clientName}</h4>
-          <p>"${t.testimonialText}"</p>
         </div>
       `;
     }).join('');
+
+    initTestimonialCarousel();
   } catch {
     // Keep the hardcoded fallback on error
   }

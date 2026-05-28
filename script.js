@@ -58,13 +58,6 @@ const BIO_ADMIN_URL = (window.location.hostname === 'localhost' || window.locati
   ? 'http://localhost:3000'
   : 'https://fotosxsofiaadmin.netlify.app';
 
-const CATEGORY_PREVIEW_IMAGES = {
-  sports: 'soccer.jpg',
-  graduation: 'graduation.jpg',
-  lovestory: 'lovestory.jpg',
-  family: 'family.jpg',
-};
-
 const STATIC_CATEGORY_PAGES = {
   sports: 'sports.html',
   graduation: 'graduation.html',
@@ -78,8 +71,8 @@ function slugToLabel(slug) {
     .replace(/\b[a-z]/g, (match) => match.toUpperCase());
 }
 
-function getCategoryImage(slug) {
-  return CATEGORY_PREVIEW_IMAGES[slug] || 'hero.png';
+function getCategoryImage(category) {
+  return category.imageUrl || 'hero.png';
 }
 
 function getCategoryPage(slug) {
@@ -88,7 +81,7 @@ function getCategoryPage(slug) {
 
 function createCategoryCard(category) {
   const href = getCategoryPage(category.slug);
-  const image = getCategoryImage(category.slug);
+  const image = getCategoryImage(category);
   const label = category.label || slugToLabel(category.slug);
 
   return `
@@ -161,5 +154,4 @@ async function loadBio() {
 
 loadBio();
 loadPortfolioCategories();
-
 
