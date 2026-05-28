@@ -396,6 +396,14 @@ function initTestimonialCarousel() {
   const next = document.getElementById('testimonialNext');
   if (!track || !prev || !next) return;
 
+  const syncCenteredMode = () => {
+    const hasOverflow = track.scrollWidth > track.clientWidth + 1;
+    track.classList.toggle('is-centered', !hasOverflow);
+  };
+
+  syncCenteredMode();
+  window.addEventListener('resize', syncCenteredMode);
+
   prev.addEventListener('click', () => {
     track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
   });
