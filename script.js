@@ -123,10 +123,26 @@ async function loadPortfolioCategories() {
     const data = await res.json();
     if (!data.categories || data.categories.length === 0) return;
 
+    // Populate carousel (used on mobile)
     track.innerHTML = data.categories.map(createCategoryCard).join('');
-    fallback.style.display = 'none';
-    carousel.style.display = 'flex';
-    initPortfolioCarousel();
+
+    // Populate grid (used on desktop)
+    fallback.innerHTML = data.categories.map(cat => {
+      const href = getCategoryPage(cat.slug);
+      const image = getCategoryImage(cat);
+      const label = cat.label || slugToLabel(cat.slug);
+      return `<a href="${href}" class="portfolio-card">
+        <img src="${image}" alt="${label} photography" loading="lazy">
+        <div class="portfolio-overlay"><span>${label}</span></div>
+      </a>`;
+    }).join('');
+
+    // On mobile, switch to carousel; on desktop, keep the grid
+    if (window.innerWidth <= 768) {
+      fallback.style.display = 'none';
+      carousel.style.display = 'flex';
+      initPortfolioCarousel();
+    }
   } catch {
     // Keep static fallback on error
   }
