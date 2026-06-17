@@ -493,6 +493,7 @@ h1, h2, h3, h4 {
 
 .portfolio-card,
 .portfolio-slide .portfolio-card {
+    position: relative;
     border-radius: 0;
     overflow: hidden;
 }
