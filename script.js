@@ -123,10 +123,10 @@ async function loadPortfolioCategories() {
     const data = await res.json();
     if (!data.categories || data.categories.length === 0) return;
 
-    // Populate carousel (used on mobile)
+    // Populate carousel (shown above 470px via CSS)
     track.innerHTML = data.categories.map(createCategoryCard).join('');
 
-    // Populate grid (used on desktop)
+    // Populate grid (shown at 470px and below via CSS)
     fallback.innerHTML = data.categories.map(cat => {
       const href = getCategoryPage(cat.slug);
       const image = getCategoryImage(cat);
@@ -137,12 +137,7 @@ async function loadPortfolioCategories() {
       </a>`;
     }).join('');
 
-    // On mobile, switch to carousel; on desktop, keep the grid
-    if (window.innerWidth <= 768) {
-      fallback.style.display = 'none';
-      carousel.style.display = 'flex';
-      initPortfolioCarousel();
-    }
+    initPortfolioCarousel();
   } catch {
     // Keep static fallback on error
   }
@@ -158,11 +153,18 @@ async function loadBio() {
     const p1 = document.getElementById('bioParagraph1');
     const p2 = document.getElementById('bioParagraph2');
     const portrait = document.getElementById('bioPortrait');
+    const backImage = document.getElementById('bioBackImage');
+    const hero = document.getElementById('home');
 
     if (heading && bio.heading) heading.textContent = bio.heading;
     if (p1 && bio.paragraph1) p1.textContent = bio.paragraph1;
     if (p2 && bio.paragraph2) p2.textContent = bio.paragraph2;
     if (portrait && bio.imageUrl) portrait.src = bio.imageUrl;
+    if (backImage && bio.backImageUrl) backImage.src = bio.backImageUrl;
+    if (hero && bio.heroImageUrl) {
+      hero.style.backgroundImage =
+        `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('${bio.heroImageUrl}')`;
+    }
   } catch {
     // Keep static fallback on error
   }

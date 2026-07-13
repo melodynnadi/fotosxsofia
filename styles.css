@@ -420,17 +420,33 @@ h1, h2, h3, h4 {
 }
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 0 80px;
 }
 
+.portfolio-grid > .portfolio-card {
+    flex: 0 1 calc(25% - 15px);
+    aspect-ratio: 4 / 5;
+}
+
 .portfolio-carousel {
-    display: none;
+    display: flex;
     position: relative;
     padding: 0 80px;
     margin-top: 20px;
+}
+
+@media (max-width: 470px) {
+    .portfolio-carousel {
+        display: none;
+    }
+
+    .portfolio-grid {
+        display: flex;
+    }
 }
 
 .carousel-track {
@@ -539,8 +555,11 @@ h1, h2, h3, h4 {
 
 @media (max-width: 1100px) {
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
         padding: 0 40px;
+    }
+
+    .portfolio-grid > .portfolio-card {
+        flex-basis: calc(50% - 10px);
     }
 
     .portfolio-carousel {
@@ -555,8 +574,11 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: 1fr;
         padding: 0 20px;
+    }
+
+    .portfolio-grid > .portfolio-card {
+        flex-basis: 100%;
     }
 
     .portfolio-carousel {
@@ -1281,8 +1303,11 @@ h1, h2, h3, h4 {
 /* ========== Responsive ========== */
 @media (max-width: 1024px) {
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
         padding: 0 40px;
+    }
+
+    .portfolio-grid > .portfolio-card {
+        flex-basis: calc(50% - 10px);
     }
 
     .prices-grid {
@@ -1419,9 +1444,12 @@ h1, h2, h3, h4 {
     }
 
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
         padding: 0 24px;
+    }
+
+    .portfolio-grid > .portfolio-card {
+        flex-basis: calc(50% - 6px);
     }
 
     .section-header {
@@ -1609,9 +1637,12 @@ h1, h2, h3, h4 {
     }
 
     .portfolio-grid {
-        grid-template-columns: 1fr;
         padding: 0 16px;
         gap: 16px;
+    }
+
+    .portfolio-grid > .portfolio-card {
+        flex-basis: 100%;
     }
 
     .section-header {

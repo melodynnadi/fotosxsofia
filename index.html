@@ -80,7 +80,7 @@
     <section class="about" id="about">
         <div class="about-images">
             <div class="about-img-back">
-                <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&h=500&fit=crop" alt="Sofia with camera" loading="lazy">
+                <img id="bioBackImage" src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&h=500&fit=crop" alt="Sofia with camera" loading="lazy">
             </div>
             <div class="about-img-front">
                 <img id="bioPortrait" src="sofieabout.jpg" alt="Sofia portrait" loading="lazy">
@@ -101,7 +101,40 @@
         </div>
         <div class="portfolio-carousel" id="portfolioCarousel" aria-label="Portfolio categories carousel">
             <button class="carousel-btn prev" id="portfolioPrev" aria-label="Previous category">←</button>
-            <div class="carousel-track" id="portfolioTrack"></div>
+            <div class="carousel-track" id="portfolioTrack">
+                <div class="portfolio-slide">
+                    <a href="sports.html" class="portfolio-card">
+                        <img src="soccer.jpg" alt="Sports photography" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <span>Sports</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-slide">
+                    <a href="graduation.html" class="portfolio-card">
+                        <img src="graduation.jpg" alt="Graduation photography" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <span>Graduation</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-slide">
+                    <a href="lovestory.html" class="portfolio-card">
+                        <img src="lovestory.jpg" alt="Love Story photography" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <span>Love Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-slide">
+                    <a href="family.html" class="portfolio-card">
+                        <img src="family.jpg" alt="Family photography" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <span>Family</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
             <button class="carousel-btn next" id="portfolioNext" aria-label="Next category">→</button>
         </div>
 
