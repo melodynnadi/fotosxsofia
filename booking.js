@@ -46,7 +46,7 @@ async function loadPricing() {
       const cards = pkgs.map(pkg => `
         <div class="price-card${pkg.isFeatured ? ' featured' : ''}">
           <div class="price-card-image">
-            <img src="${cfg.img}" alt="${pkg.name}" loading="lazy">
+            <img src="${pkg.imageUrl || cfg.img}" alt="${pkg.name}" loading="lazy">
             <div class="price-card-overlay">
               <h3>${pkg.name}</h3>
               <span class="price-amount">${pkg.price ? '$' + pkg.price : '$—'}</span>
