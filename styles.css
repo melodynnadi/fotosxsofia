@@ -1234,6 +1234,13 @@ h1, h2, h3, h4 {
     letter-spacing: 1px;
 }
 
+/* ========== Loading state (dims stale content while live data loads) ========== */
+.content-loading {
+    opacity: 0.35;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
 /* ========== Animations ========== */
 .fade-in {
     opacity: 0;

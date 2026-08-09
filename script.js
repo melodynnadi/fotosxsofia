@@ -170,6 +170,16 @@ async function loadBio() {
   }
 }
 
-loadBio();
-loadPortfolioCategories();
+// Dim the sections that show admin-editable content while it loads, instead of
+// flashing the static fallback content and then abruptly swapping to the real thing.
+const dynamicSections = [
+  document.getElementById('home'),
+  document.querySelector('.about'),
+  document.getElementById('portfolio'),
+].filter(Boolean);
+dynamicSections.forEach((el) => el.classList.add('content-loading'));
+
+Promise.allSettled([loadBio(), loadPortfolioCategories()]).then(() => {
+  dynamicSections.forEach((el) => el.classList.remove('content-loading'));
+});
 
