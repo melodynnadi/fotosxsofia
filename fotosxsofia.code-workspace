@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../fotosbysofia-admin"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "fotosxsofia",
+		"liveServer.settings.port": 5501
+	}
+}

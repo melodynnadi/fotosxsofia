@@ -110,36 +110,63 @@ function initPortfolioCarousel() {
     track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
   });
 }
+initPortfolioCarousel();
+
+// Cache the last-known-good data in localStorage so repeat visits render the
+// real content instantly instead of showing the static fallback while a fresh
+// network request (and possible Netlify cold start) is in flight.
+const CACHE_KEY_BIO = 'fxs_bio_cache_v1';
+const CACHE_KEY_CATEGORIES = 'fxs_categories_cache_v1';
+
+function renderPortfolioCategories(categories) {
+  const track = document.getElementById('portfolioTrack');
+  const fallback = document.getElementById('portfolioFallback');
+  if (!track || !fallback || !categories || categories.length === 0) return;
+
+  // Populate carousel (shown above 470px via CSS)
+  track.innerHTML = categories.map(createCategoryCard).join('');
+
+  // Populate grid (shown at 470px and below via CSS)
+  fallback.innerHTML = categories.map(cat => {
+    const href = getCategoryPage(cat.slug);
+    const image = getCategoryImage(cat);
+    const label = cat.label || slugToLabel(cat.slug);
+    return `<a href="${href}" class="portfolio-card">
+      <img src="${image}" alt="${label} photography" loading="lazy">
+      <div class="portfolio-overlay"><span>${label}</span></div>
+    </a>`;
+  }).join('');
+}
 
 async function loadPortfolioCategories() {
-  const track = document.getElementById('portfolioTrack');
-  const carousel = document.getElementById('portfolioCarousel');
-  const fallback = document.getElementById('portfolioFallback');
-  if (!track || !carousel || !fallback) return;
-
   try {
     const res = await fetch(`${BIO_ADMIN_URL}/api/gallery-categories`);
     if (!res.ok) return;
     const data = await res.json();
     if (!data.categories || data.categories.length === 0) return;
-
-    // Populate carousel (shown above 470px via CSS)
-    track.innerHTML = data.categories.map(createCategoryCard).join('');
-
-    // Populate grid (shown at 470px and below via CSS)
-    fallback.innerHTML = data.categories.map(cat => {
-      const href = getCategoryPage(cat.slug);
-      const image = getCategoryImage(cat);
-      const label = cat.label || slugToLabel(cat.slug);
-      return `<a href="${href}" class="portfolio-card">
-        <img src="${image}" alt="${label} photography" loading="lazy">
-        <div class="portfolio-overlay"><span>${label}</span></div>
-      </a>`;
-    }).join('');
-
-    initPortfolioCarousel();
+    renderPortfolioCategories(data.categories);
+    try { localStorage.setItem(CACHE_KEY_CATEGORIES, JSON.stringify(data.categories)); } catch {}
   } catch {
-    // Keep static fallback on error
+    // Keep static/cached fallback on error
+  }
+}
+
+function applyBio(bio) {
+  const heading = document.getElementById('bioHeading');
+  const p1 = document.getElementById('bioParagraph1');
+  const p2 = document.getElementById('bioParagraph2');
+  const portrait = document.getElementById('bioPortrait');
+  const backImage = document.getElementById('bioBackImage');
+  const hero = document.getElementById('home');
+
+  if (heading && bio.heading) heading.textContent = bio.heading;
+  if (p1 && bio.paragraph1) p1.textContent = bio.paragraph1;
+  if (p2 && bio.paragraph2) p2.textContent = bio.paragraph2;
+  if (portrait && bio.imageUrl) portrait.src = bio.imageUrl;
+  if (backImage && bio.backImageUrl) backImage.src = bio.backImageUrl;
+  if (hero && bio.heroImageUrl) {
+    hero.style.backgroundImage =
+      `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('${bio.heroImageUrl}')`;
   }
 }
 
@@ -148,38 +175,43 @@ async function loadBio() {
     const res = await fetch(`${BIO_ADMIN_URL}/api/bio`);
     if (!res.ok) return;
     const { bio } = await res.json();
-
-    const heading = document.getElementById('bioHeading');
-    const p1 = document.getElementById('bioParagraph1');
-    const p2 = document.getElementById('bioParagraph2');
-    const portrait = document.getElementById('bioPortrait');
-    const backImage = document.getElementById('bioBackImage');
-    const hero = document.getElementById('home');
-
-    if (heading && bio.heading) heading.textContent = bio.heading;
-    if (p1 && bio.paragraph1) p1.textContent = bio.paragraph1;
-    if (p2 && bio.paragraph2) p2.textContent = bio.paragraph2;
-    if (portrait && bio.imageUrl) portrait.src = bio.imageUrl;
-    if (backImage && bio.backImageUrl) backImage.src = bio.backImageUrl;
-    if (hero && bio.heroImageUrl) {
-      hero.style.backgroundImage =
-        `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('${bio.heroImageUrl}')`;
-    }
+    applyBio(bio);
+    try { localStorage.setItem(CACHE_KEY_BIO, JSON.stringify(bio)); } catch {}
   } catch {
-    // Keep static fallback on error
+    // Keep static/cached fallback on error
   }
 }
 
-// Dim the sections that show admin-editable content while it loads, instead of
-// flashing the static fallback content and then abruptly swapping to the real thing.
-const dynamicSections = [
-  document.getElementById('home'),
-  document.querySelector('.about'),
-  document.getElementById('portfolio'),
-].filter(Boolean);
-dynamicSections.forEach((el) => el.classList.add('content-loading'));
+// Render from cache immediately (no network wait) if we have it, and only dim
+// the sections that don't yet have real data while the fresh fetch is in flight.
+const heroEl = document.getElementById('home');
+const aboutEl = document.querySelector('.about');
+const portfolioEl = document.getElementById('portfolio');
+
+let hasCachedBio = false;
+let hasCachedCategories = false;
+try {
+  const cachedBio = localStorage.getItem(CACHE_KEY_BIO);
+  if (cachedBio) {
+    applyBio(JSON.parse(cachedBio));
+    hasCachedBio = true;
+  }
+} catch {}
+try {
+  const cachedCategories = localStorage.getItem(CACHE_KEY_CATEGORIES);
+  if (cachedCategories) {
+    renderPortfolioCategories(JSON.parse(cachedCategories));
+    hasCachedCategories = true;
+  }
+} catch {}
+
+if (!hasCachedBio) {
+  if (heroEl) heroEl.classList.add('content-loading');
+  if (aboutEl) aboutEl.classList.add('content-loading');
+}
+if (!hasCachedCategories && portfolioEl) portfolioEl.classList.add('content-loading');
 
 Promise.allSettled([loadBio(), loadPortfolioCategories()]).then(() => {
-  dynamicSections.forEach((el) => el.classList.remove('content-loading'));
+  [heroEl, aboutEl, portfolioEl].forEach((el) => el && el.classList.remove('content-loading'));
 });
 
