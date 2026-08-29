@@ -25,7 +25,7 @@ async function loadGallery() {
       grid.dataset.category = category;
       const title = document.getElementById('galleryTitle');
       if (title) title.textContent = slugToLabel(category);
-      document.title = `${slugToLabel(category)} — fotosxsofia`;
+      document.title = `${slugToLabel(category)} — fotosxs0fia`;
     }
   }
 
