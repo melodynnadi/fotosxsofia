@@ -421,8 +421,10 @@ async function loadTestimonials() {
     const { testimonials } = await res.json();
     if (!testimonials || testimonials.length === 0) return; // keep fallback HTML
 
-    grid.innerHTML = testimonials.map(t => {
-      const fallback = `https://ui-avatars.com/api/?name=${encodeURIComponent(t.clientName)}&background=b8633e&color=fff`;
+    const avatarColors = ['003366', 'a50044', 'db0030'];
+
+    grid.innerHTML = testimonials.map((t, i) => {
+      const fallback = `https://ui-avatars.com/api/?name=${encodeURIComponent(t.clientName)}&background=${avatarColors[i % avatarColors.length]}&color=fff`;
       return `
         <div class="testimonial-slide">
           <div class="testimonial-card">
